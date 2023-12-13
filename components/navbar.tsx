@@ -15,14 +15,7 @@ export default function Navbar() {
             Home
           </Link>
         </li>
-        <li className="">
-          <Link
-            href="/course"
-            className=" hover:bg-purple-50 px-4 py-2 rounded-full transition"
-          >
-            Course
-          </Link>
-        </li>
+        
         <li className="">
           <Link
             href="/contact"
