@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Testimonial {
   id: number;
   name: string;
@@ -56,11 +58,18 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({
             className="border border-gray-200 p-4 rounded-lg"
           >
             <div className="flex items-center mb-4">
-              <img
+              <Image
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-12 h-12 rounded-full mr-4"
+                width={48} 
+                height={48} 
+                style={{
+                  objectFit: "cover",
+                }}
+              
               />
+
               <div>
                 <h3 className="text-lg font-semibold">{testimonial.name}</h3>
                 <p className="text-gray-500">{testimonial.position}</p>
