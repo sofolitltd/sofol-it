@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <Image
             src={imageUrl}
             alt={title}
-            layout="fill"
+            fill
             objectFit="contain"
             className=" p-2"
           />
@@ -54,7 +54,7 @@ const ServicesPage: React.FC = () => {
             title="Web Development"
             description="Professional websites tailored to your needs. Responsive designs, fast loading times, and seamless user experiences."
             link="/services/web-development"
-            imageUrl="/images/web-development.png"
+            imageUrl="/services/web-development.png"
           />
           <ServiceCard
             title="App Development"

@@ -1,4 +1,6 @@
 // components/TrustedBySlider.tsx
+'use client'
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -50,7 +52,7 @@ const TrustedBySlider: React.FC<TrustedBySliderProps> = ({ trustedImages }) => {
       <Slider {...settings}>
         {trustedImages.map((image, index) => (
           <div key={index} className=" px-2 py-2">
-            <div className=" bg-white rounded-lg overflow-hidden flex justify-center items-center mb-4 py-2">
+            <div className=" bg-white shadow-md shadow-slate-200 rounded-lg overflow-hidden flex justify-center items-center mb-4 py-2">
               <Image src={image} alt={`Trusted by ${index}`} width={100} height={100} objectFit="contain"  />
             </div>
           </div>
