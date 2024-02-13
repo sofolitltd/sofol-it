@@ -1,391 +1,258 @@
-import React from 'react'
+// pages/index.tsx
+'use client'
 
-export default function page() {
+import Link from "next/link";
+import Image from "next/image";
+
+const HomePage: React.FC = () => {
   return (
     <div>
+      <HeroSection />
+      <ServicesSection />
+      <Slider/>
+      <TestimonialSection />
+      <ContactSection />
+    </div>
+  );
+};
 
-      {/*  */}
-<section className="text-gray-600 body-font">
-  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-        Before they sold out
-        <br className="hidden lg:inline-block" />
-        readymade gluten
-      </h1>
-      <p className="mb-8 leading-relaxed">
-        Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
-        plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk
-        tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard
-        chambray.
-      </p>
-      <div className="flex justify-center">
-        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-          Button
-        </button>
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-          Button
-        </button>
+const HeroSection: React.FC = () => {
+  return (
+    <div className="">
+      {/* Hero Section */}
+      <div className="relative">
+        {/* Background Image */}
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-center bg-cover"
+          style={{ backgroundImage: `url('/images/hero.png')` }}
+        ></div>
+
+        {/* Content */}
+        <div className="container mx-auto text-center relative py-40 px-10">
+          <h1 className="text-black text-4xl md:text-6xl font-bold mb-4">
+            Grow Your Business
+          </h1>
+          <div className="">
+            <p className="text-gray-700 text-lg md:text-xl mb-14">
+              We specialize in helping businesses succeed online.
+              <br />
+              Let us help you reach your digital goals.
+            </p>
+            <Link
+              href="/contact"
+              className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg transition duration-300 hover:bg-gray-300 hover:text-gray-900 inline-block border border-gray-900"
+            >
+              Get in Touch
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
-    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img
-        className="object-cover object-center rounded"
-        alt="hero"
-        src="https://dummyimage.com/720x600"
+  );
+};
+
+//
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  link: string;
+  imageUrl: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  title,
+  description,
+  link,
+  imageUrl,
+}) => {
+  return (
+    <div className="border border-gray-200 px-6 py-8 rounded-lg">
+      <Link href={link}>
+        <div className="relative h-32 md:h-40 lg:h-48">
+          <Image
+            src={imageUrl}
+            alt={title}
+            layout="fill"
+            objectFit="contain"
+            className=" p-2"
+          />
+        </div>
+        <h3 className="text-xl font-semibold m-4">{title}</h3>
+        <p className="text-gray-600">{description}</p>
+      </Link>
+    </div>
+  );
+};
+
+const ServicesSection: React.FC = () => {
+  return (
+    <div className="py-20 px-5 ">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
+        <p className=" text-base text-gray-600 mb-16">
+          Explore the various services we offer to help grow your business.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <ServiceCard
+            title="Design"
+            description="Creative designs to elevate your brand's visual identity. Get eye-catching graphics and intuitive user interfaces."
+            link="/services/design"
+            imageUrl="/images/design.png"
+          />
+          <ServiceCard
+            title="Web Development"
+            description="Professional websites tailored to your needs. Responsive designs, fast loading times, and seamless user experiences."
+            link="/services/web-development"
+            imageUrl="/images/web-development.png"
+          />
+          <ServiceCard
+            title="App Development"
+            description="Custom mobile applications for iOS and Android. Reach your audience on the go with intuitive and feature-rich apps."
+            link="/services/app-development"
+            imageUrl="/images/app-development.png"
+          />
+          <ServiceCard
+            title="Marketing"
+            description="Effective strategies to boost your online presence. Reach your target audience and drive conversions with marketing techniques."
+            link="/services/marketing"
+            imageUrl="/images/marketing.png"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+//
+
+const ContactSection: React.FC = () => {
+  return (
+    <div className="bg-gray-900 text-white py-20">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Contact Us</h2>
+        <p className="text-lg md:text-xl mb-8">
+          Ready to get started? Reach out to us today and let's discuss your
+          project.
+        </p>
+        <Link
+          href="/contact"
+          className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold text-lg transition duration-300 hover:bg-gray-300 hover:text-gray-900"
+        >
+          Contact Now
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+
+
+import React from 'react';
+import TrustedBySlider from '../components/TrustedBySlider';
+
+const Slider: React.FC = () => {
+  const trustedImages = [
+    '/images/wellbeingclinic.png',
+    '/images/admissioncoaching.png',
+    '/images/saifacademy.png',
+    '/images/affiliatedr.png',
+    '/images/priyobanshkhali.png',
+    '/images/petelementsbd.png',
+    
+    // Add more image URLs as needed
+  ];
+
+  return (
+    <div className="  bg-gray-50">
+      <TrustedBySlider trustedImages={trustedImages} />
+    </div>
+  );
+};
+
+
+// 
+interface Testimonial {
+  id: number;
+  name: string;
+  position: string;
+  message: string;
+  image: string;
+}
+
+interface ClientTestimonialsProps {
+  title: string;
+  subTitle: string;
+  testimonials: Testimonial[];
+}
+
+
+
+const testimonialsData = [
+  {
+    id: 1,
+    name: 'Afjal Hossain Hridoy',
+    position: 'Co-Founder, Wellbeing Clinic',
+    message: "Choosing Sofol IT for our app development was a game-changer. Their professionalism made the entire process smooth. Our app now stands out with its beautiful design and user-friendly interface.",
+    image: '/images/hridoy.png',
+  },
+  {
+    id: 2,
+    name: 'Towfiqur Rahman',
+    position: 'Founder, Doial',
+    message: "Choosing Sofol IT for our app development was a game-changer. Their professionalism made the entire process smooth. Our app now stands out with its beautiful design and user-friendly interface.",
+    image: '/images/tusar.png',
+  },
+  {
+    id: 3,
+    name: 'Ashiqur  Rahman',
+    position: 'CEO, Petelementbd.com',
+    message: "Working with Sofol IT was an absolute pleasure! Their team's expertise and attention to detail in a stunning website that perfectly represents our brand. Highly recommend their exceptional services.",
+    image: '/images/ashik.png',
+  },
+
+];
+
+const TestimonialSection: React.FC = () => {
+  return (
+    <div>
+      <ClientTestimonials
+        title="Client Testimonials"
+        subTitle="See what our clients have to say about us."
+        testimonials={testimonialsData}
       />
     </div>
-  </div>
-</section>
+  );
+};
 
-{/*  */}
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-        Pitchfork Kickstarter Taxidermy
-      </h1>
-      <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
-        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-        gentrify, subway tile poke farm-to-table.
-      </p>
-    </div>
-    <div className="flex flex-wrap -m-4">
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-            </svg>
+
+// 
+const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ title, subTitle, testimonials }) => {
+  return (
+    <div className="container mx-auto py-20 px-6">
+      <h2 className="text-3xl font-semibold text-center mb-4">{title}</h2>
+      <p className="text-lg text-gray-600 text-center mb-8">{subTitle}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map(testimonial => (
+          <div key={testimonial.id} className="border border-gray-200 p-4 rounded-lg">
+            <div className="flex items-center mb-4">
+              <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4" />
+              <div>
+                <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                <p className="text-gray-500">{testimonial.position}</p>
+              </div>
+            </div>
+            <p className="text-gray-700">{testimonial.message}</p>
           </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            Shooting Stars
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <circle cx={6} cy={6} r={3} />
-              <circle cx={6} cy={18} r={3} />
-              <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            The Catalyzer
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-              <circle cx={12} cy={7} r={4} />
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            Neptune
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            Melanchole
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            Bunker
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
-      </div>
-      <div className="xl:w-1/3 md:w-1/2 p-4">
-        <div className="border border-gray-200 p-6 rounded-lg">
-          <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-2">
-            Ramona Falls
-          </h2>
-          <p className="leading-relaxed text-base">
-            Fingerstache flexitarian street art 8-bit waist co, subway tile poke
-            farm.
-          </p>
-        </div>
+        ))}
       </div>
     </div>
-    <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-      Button
-    </button>
-  </div>
-</section>
-
-{/*  */}
-
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap -m-4 text-center">
-      <div className="p-4 sm:w-1/4 w-1/2">
-        <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-          2.7K
-        </h2>
-        <p className="leading-relaxed">Users</p>
-      </div>
-      <div className="p-4 sm:w-1/4 w-1/2">
-        <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-          1.8K
-        </h2>
-        <p className="leading-relaxed">Subscribes</p>
-      </div>
-      <div className="p-4 sm:w-1/4 w-1/2">
-        <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-          35
-        </h2>
-        <p className="leading-relaxed">Downloads</p>
-      </div>
-      <div className="p-4 sm:w-1/4 w-1/2">
-        <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
-          4
-        </h2>
-        <p className="leading-relaxed">Products</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/*  */}
-<section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-col text-center w-full mb-20">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-        Master Cleanse Reliac Heirloom
-      </h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-        gentrify, subway tile poke farm-to-table. Franzen you probably haven't
-        heard of them man bun deep jianbing selfies heirloom.
-      </p>
-    </div>
-    <div className="flex flex-wrap -m-4">
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/600x360"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              Shooting Stars
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/601x361"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              The Catalyzer
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/603x363"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              The 400 Blows
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/602x362"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              Neptune
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/605x365"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              Holden Caulfield
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img
-            alt="gallery"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            src="https://dummyimage.com/606x366"
-          />
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">
-              THE SUBTITLE
-            </h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              Alper Kamu
-            </h1>
-            <p className="leading-relaxed">
-              Photo booth fam kinfolk cold-pressed sriracha leggings jianbing
-              microdosing tousled waistcoat.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{/*  */}
+  );
+};
 
 
-    </div>
-  )
-}
+
+
+export default HomePage;
+
 
