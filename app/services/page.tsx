@@ -1,5 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services | Sofol IT",
+  description: 'Services by Sofol IT',
+}
 
 //
 interface ServiceCardProps {

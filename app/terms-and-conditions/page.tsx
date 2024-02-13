@@ -1,6 +1,10 @@
 // pages/terms-and-conditions.tsx
+import { Metadata } from 'next';
 
-import React from 'react';
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Sofol IT",
+  description: 'Terms & Conditions by Sofol IT',
+}
 
 const TermsAndConditionsPage: React.FC = () => {
   return (

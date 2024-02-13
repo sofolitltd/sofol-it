@@ -1,6 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Design | Sofol IT",
+  description: 'Design by Sofol IT',
+}
+
+
 const DesignDetailsPage: React.FC = () => {
   return (
     <div className="container mx-auto my-28 px-4">

@@ -1,6 +1,14 @@
 // components/ContactPage.tsx
 import React from "react";
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact | Sofol IT",
+  description: 'Contact Sofol IT',
+}
+
+
 const address = [
   {
     title: "Main office",

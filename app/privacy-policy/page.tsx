@@ -1,5 +1,13 @@
 // pages/privacy-policy.tsx
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Sofol IT",
+  description: 'Privacy Policy by Sofol IT',
+}
+
+
 const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="container mx-auto mt-10 mb-16">

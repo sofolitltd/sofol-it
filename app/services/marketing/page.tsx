@@ -1,5 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Marketing | Sofol IT",
+  description: 'Marketing by Sofol IT',
+}
 
 const MarketingServicesPage: React.FC = () => {
   return (

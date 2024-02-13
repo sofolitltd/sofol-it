@@ -1,5 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Web Development | Sofol IT",
+  description: 'Web Development by Sofol IT',
+}
 
 const WebDevelopmentPage: React.FC = () => {
   return (
