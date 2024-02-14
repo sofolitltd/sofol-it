@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const PrivacyPolicyPage: React.FC = () => {
   return (
-    <div className="container mx-auto mt-10 mb-16">
+    <div className="container py-28 px-6 lg:px-20">
       <h1 className="text-3xl font-semibold mb-4">Privacy Policy</h1>
       <p className="mb-4">
         This Privacy Policy describes how Sofol IT ("we", "us", or "our")

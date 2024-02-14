@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const TermsAndConditionsPage: React.FC = () => {
   return (
-    <div className="container mx-auto mt-10 pb-16">
+    <div className="container py-28 px-6 lg:px-20">
       <h1 className="text-3xl font-semibold mb-4">Terms and Conditions</h1>
       <p>
         These terms and conditions ("Terms") govern your use of the Sofol IT website and services operated by Sofol IT ("us", "we", or "our").

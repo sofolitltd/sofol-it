@@ -16,8 +16,8 @@ const TrustedBySlider: React.FC<TrustedBySliderProps> = ({ trustedImages }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToShow: 6,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
 
@@ -25,8 +25,8 @@ const TrustedBySlider: React.FC<TrustedBySliderProps> = ({ trustedImages }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 2,
+          slidesToShow: 5,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -34,7 +34,7 @@ const TrustedBySlider: React.FC<TrustedBySliderProps> = ({ trustedImages }) => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 2,
           initialSlide: 0,
         },
@@ -53,14 +53,14 @@ const TrustedBySlider: React.FC<TrustedBySliderProps> = ({ trustedImages }) => {
       <Slider {...settings}>
         {trustedImages.map((image, index) => (
           <div key={index} className=" px-2 py-2">
-            <div className=" bg-white shadow-md shadow-slate-200 rounded-lg overflow-hidden flex justify-center items-center mb-4 py-2">
+            <div className="overflow-hidden flex justify-center items-center mb-4 py-2">
               <Image
                 src={image}
                 alt={`Trusted by ${index}`}
                 width={100}
                 height={100}
                 style={{
-                  objectFit: "contain",
+                  objectFit: "cover",
                 }}
               />
             </div>
