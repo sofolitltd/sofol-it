@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -36,8 +36,8 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex space-x-8">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/services">Services</NavLink>
-      
           <NavLink href="/contact">Contact</NavLink>
+          <NavLink href="/blog">Blog</NavLink>
         </div>
         <div className="md:hidden">
           <button
@@ -108,6 +108,9 @@ const Navbar: React.FC = () => {
               </MobileNavLink>
               <MobileNavLink href="/contact" onClick={closeMobileMenu}>
                 Contact
+              </MobileNavLink>
+              <MobileNavLink href="/blog" onClick={closeMobileMenu}>
+                Blog
               </MobileNavLink>
             </div>
           </div>
