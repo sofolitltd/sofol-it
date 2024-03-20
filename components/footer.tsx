@@ -85,7 +85,7 @@ export default function  Footer() {
             <FaTwitter />
           </a>
           <a
-            href="https://www.linkedin.com/in/sofolitltd"
+            href="https://www.linkedin.com/company/sofolitltd"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white"

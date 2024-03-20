@@ -50,7 +50,7 @@ export default function ContactPage() {
     <div className="py-28 px-5">
 
       {/* social */}
-      <div className="container mx-auto grid gap-x-16 gap-y-10 lg:grid-cols-2 justify-center items-end">        
+      <div className="container mx-auto grid gap-x-20 gap-y-10 lg:grid-cols-2 justify-center items-end">        
           <div className="">
             <p className="text-2xl font-bold text-gray-900 md:text-4xl">
               Connect with Us
