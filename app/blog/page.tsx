@@ -1,28 +1,5 @@
 "use client"
 
-// import { groq } from "next-sanity";
-// import { client } from "@/sanity/lib/client";
-// import BlogContent from "./blog_content";
-// import { Post } from "@/types";
-
-
-// const query = groq`*[_type == 'post']{
-//   ...,
-//   author->,
-//   categories[]->
-// } | order(_createdAt desc)`;
-
-
-// export default async function Blog() {
-//   const posts = await client.fetch<Post []>(query);
-
-//   //
-//   return (
-//     <div className="mx-10 lg:mx-20 my-28 ">
-//       <BlogContent posts={posts} />
-//     </div>
-//   );
-// }
 import React, { useEffect, useState } from 'react';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
