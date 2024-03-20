@@ -10,8 +10,8 @@ export const RichText = {
           <Image
             src={urlFor(value).url()}
             alt="Post image"
-            width={600}
-            height={600}
+            width={700}
+            height={700}
             className="object-contain py-6"
           />
         </div>
@@ -45,16 +45,16 @@ export const RichText = {
       </blockquote>
     ),
   },
-  marks: {
-    link: ({ children, value }: any) => {
-      const rel = !value.href.startWith("/")
-        ? "noreferrer noopener"
-        : undefined;
-      return (
-        <Link href={value.href} rel={rel} className="underline">
-          {children}
-        </Link>
-      );
-    },
-  },
+  // marks: {
+  //   link: ({ children, value }: any) => {
+  //     const rel = !value.href.startWith("/")
+  //       ? "noreferrer noopener"
+  //       : undefined;
+  //     return (
+  //       <Link href={value.href} rel={rel} className="underline">
+  //         {children}
+  //       </Link>
+  //     );
+  //   },
+  // },
 };
