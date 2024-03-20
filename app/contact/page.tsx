@@ -18,95 +18,72 @@ const address = [
   },
 ];
 
+const socialMediaLinks = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/sofolitltd",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@sofolitltd",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/sofolitltd",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/sofolitltd",
+  },
+  {
+    name: "Pinterest",
+    url: "https://www.pinterest.com/sofolitltd",
+  },
+  {
+    name: "Github",
+    url: "https://www.github.com/sofolitltd",
+  },
+];
+
 export default function ContactPage() {
   return (
-    <div className="">
-      <div className=" my-20 lg:my-28 items-end pt-8 px-8 lg:px-10 grid gap-x-4 gap-y-10 lg:grid-cols-2">
-        {/* contact form */}
-        <div className="flex">
-          <div className="px-2 md:px-12">
+    <div className="py-28 px-5">
+
+      {/* social */}
+      <div className="container mx-auto grid gap-x-16 gap-y-10 lg:grid-cols-2 justify-center items-end">        
+          <div className="">
             <p className="text-2xl font-bold text-gray-900 md:text-4xl">
-              Get in touch
+              Connect with Us
             </p>
             <p className="mt-2 text-lg text-gray-600">
-              Our friendly team would love to hear from you.
+              Follow us on social media for updates and news.
             </p>
-            <form action="" className="mt-8 space-y-4">
-              <div className="grid w-full  items-center gap-1.5">
-                <label
-                  className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  htmlFor="name"
+            <div className="mt-8 space-y-4">
+              {socialMediaLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1"
                 >
-                  Name
-                </label>
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  type="text"
-                  id="name"
-                  placeholder="Name"
-                />
-              </div>
-              <div className="grid w-full  items-center gap-1.5">
-                <label
-                  className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  type="text"
-                  id="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div className="grid w-full  items-center gap-1.5">
-                <label
-                  className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  htmlFor="phone_number"
-                >
-                  Phone number
-                </label>
-                <input
-                  className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  type="tel"
-                  id="phone_number"
-                  placeholder="Phone number"
-                />
-              </div>
-              <div className="grid w-full  items-center gap-1.5">
-                <label
-                  className="text-sm font-medium leading-none text-gray-700 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  htmlFor="message"
-                >
-                  Message
-                </label>
-                <textarea
-                  className="flex mb-2 h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                  id="message"
-                  placeholder="Leave us a message"
-                  cols={3}
-                />
-              </div>
-              <button
-                type="button"
-                className="w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              >
-                Send Message
-              </button>
-            </form>
+                  {link.name}
+                </a>
+              ))}
           </div>
-        </div>
+        
+      </div>
         <img
           alt="Contact us"
-          className="hidden max-h-full w-full rounded-lg object-cover lg:block"
+          className="max-h-full w-full rounded-lg object-cover lg:block"
           src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGhhcHB5JTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
         />
       </div>
 
+
       {/* Address */}
-      <div className="rounded-lg bg-gray-100 mt-8">
-        <div className="mx-auto px-12 lg:px-24 py-10">
+      <div className="container mx-auto rounded-lg bg-gray-100 mt-20">
+        <div className="mx-auto px-10 lg:px-24 py-10">
           <div className="py-8">
             <div className="grid grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-2">
               <div className="space-y-4">
@@ -117,6 +94,9 @@ export default function ContactPage() {
                   Find us at these locations.
                 </p>
               </div>
+
+
+              {/* address list */}
               <div className="space-y-4 divide-y-2">
                 {address.map((address) => (
                   <div

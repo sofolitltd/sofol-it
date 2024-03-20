@@ -14,12 +14,12 @@ const nextConfig = {
 
 }
 
-module.exports = {
-    reactStrictMode: true,
-    // Enable Incremental Static Regeneration
-    experimental: {
-      revalidate: 60, // Revalidate every 60 seconds
-    },
-  };
+// module.exports = {
+//   reactStrictMode: true,
+//   // Enable Incremental Static Regeneration
+//   experimental: {
+//     revalidate: 60, // Revalidate every 60 seconds
+//   },
+// };
 
 module.exports = nextConfig
