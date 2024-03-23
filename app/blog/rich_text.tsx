@@ -1,6 +1,5 @@
 import { urlFor } from "@/sanity/lib/client";
 import Image from "next/image";
-import Link from "next/link";
 
 export const RichText = {
   types: {
@@ -45,6 +44,7 @@ export const RichText = {
       </blockquote>
     ),
   },
+
   // marks: {
   //   link: ({ children, value }: any) => {
   //     const rel = !value.href.startWith("/")

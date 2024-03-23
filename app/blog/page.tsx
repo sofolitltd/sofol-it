@@ -36,7 +36,7 @@ const Blog = () => {
   }, []); // Fetch posts only once on component mount
 
   return (
-    <div className="mx-10 lg:mx-20 my-28">
+    <div className="mx-5 lg:mx-20 my-28">
       {loading ? ( // Render loading indicator if loading is true
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {[...Array(6)].map((_, index) => (

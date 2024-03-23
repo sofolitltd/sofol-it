@@ -34,15 +34,24 @@ export default async function BlogDetails({ params: { slug } }: Props) {
   const post: Post = await client.fetch(query, { slug });
 
   return (
-    <div className="mx-10 md:mx-40 lg:mx-56 my-28">
+    <div className="mx-5 md:mx-40 lg:mx-56 my-28">
+
+       {/* Main Image */}
+       <div className="w-full h-80 md:h-96 relative">
+        <Image
+          src={urlFor(post.mainImage).url()}
+          layout="fill"
+          objectFit="cover"
+          alt="main image"
+        />
+      </div>
+
+
       {/* Title, Author, and Category Section */}
       <div className="text-black mb-6">
 
-        {/* title */}
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-
-        {/* categories */}
-        <div className="mt-2">
+           {/* categories */}
+           <div className="mt-4">
           {post.categories && post.categories.length > 0 && (
             post.categories.map((category: Category, index: number) => (
               <span
@@ -55,21 +64,13 @@ export default async function BlogDetails({ params: { slug } }: Props) {
           )}
         </div>
 
-        
+        {/* title */}
+        <h1 className="mt-5 text-3xl font-bold">{post.title}</h1>
       </div>
 
-      {/* Main Image */}
-      <div className="w-full h-80 md:h-96 relative">
-        <Image
-          src={urlFor(post.mainImage).url()}
-          layout="fill"
-          objectFit="cover"
-          alt="main image"
-        />
-      </div>
-
+     
       {/* Body Content */}
-      <div className="mt-6 mx-0 lg:mx-10">
+      <div className="mt-8 mx-0">
         <PortableText value={post.body} components={RichText}/>
       </div>
 
