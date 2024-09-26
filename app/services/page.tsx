@@ -43,9 +43,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 const ServicesPage: React.FC = () => {
   return (
     <div className="py-28 px-5 ">
-      <div className="container mx-auto text-start">
+      <div className="container mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
-        <p className=" text-base text-gray-600 mb-16">
+        <p className=" text-base text-gray-600 mb-16 ">
           Explore the various services we offer to help grow your business.
         </p>
 

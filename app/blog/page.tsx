@@ -36,7 +36,16 @@ const Blog = () => {
   }, []); // Fetch posts only once on component mount
 
   return (
-    <div className="mx-5 lg:mx-20 my-28">
+    <div className="mx-5 lg:mx-20 my-28"> 
+        <div className="text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">
+          Blog
+        </h2>
+        <p className=" text-base text-gray-600 mb-16">
+          Up to date with our latest blogs.
+        </p>
+      </div>
+
       {loading ? ( // Render loading indicator if loading is true
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {[...Array(6)].map((_, index) => (

@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="text-white py-4 overflow-hidden absolute top-0 left-0 right-0 z-40 px-6">
+    <nav className=" text-white py-4 overflow-hidden absolute top-0 left-0 right-0 z-40 px-6">
       <div className="container mx-auto flex justify-between items-center">
         <div>
           <Link href="/">
@@ -38,7 +38,10 @@ const Navbar: React.FC = () => {
           <NavLink href="/services">Services</NavLink>
           <NavLink href="/contact">Contact</NavLink>
           <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/pricing">Pricing</NavLink>
         </div>
+          <Link className=" bg-green-500 px-4 py-1 rounded-md hidden md:flex"  href="https://sofolitbd.web.app">Courses</Link>
+
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
@@ -99,7 +102,7 @@ const Navbar: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-col mt-10 space-y-1 ">
+            <div className="flex flex-col mt-10 space-y-1 mb-5">
               <MobileNavLink href="/" onClick={closeMobileMenu}>
                 Home
               </MobileNavLink>
@@ -112,7 +115,12 @@ const Navbar: React.FC = () => {
               <MobileNavLink href="/blog" onClick={closeMobileMenu}>
                 Blog
               </MobileNavLink>
+              <MobileNavLink href="/pricing" onClick={closeMobileMenu}>
+                Pricing
+              </MobileNavLink>
             </div>
+            <Link className=" bg-green-500 px-4 py-1 rounded-md  flex justify-center md:hidden"  href="https://sofolitbd.web.app">Courses</Link>
+
           </div>
         </div>
       )}

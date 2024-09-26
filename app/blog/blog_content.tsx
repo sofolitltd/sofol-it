@@ -23,7 +23,7 @@ const BlogContent = ({ posts }: Props) => (
             {post.mainImage && (
               <Image
                 src={urlFor(post.mainImage).url()}
-                alt=""
+                alt={post.title}
                 layout="fill"
                 objectFit="cover"
                 className="rounded-t-md"

@@ -1,13 +1,12 @@
 // components/ContactPage.tsx
 import React from "react";
 
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact | Sofol IT",
-  description: 'Contact Sofol IT',
-}
-
+  description: "Contact Sofol IT",
+};
 
 const address = [
   {
@@ -48,38 +47,45 @@ const socialMediaLinks = [
 export default function ContactPage() {
   return (
     <div className="py-28 px-5">
-
       {/* social */}
-      <div className="container mx-auto grid gap-x-20 gap-y-10 lg:grid-cols-2 justify-center items-end">        
-          <div className="">
-            <p className="text-2xl font-bold text-gray-900 md:text-4xl">
-              Connect with Us
-            </p>
-            <p className="mt-2 text-lg text-gray-600">
-              Follow us on social media for updates and news.
-            </p>
-            <div className="mt-8 space-y-4">
-              {socialMediaLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1"
-                >
-                  {link.name}
-                </a>
-              ))}
-          </div>
-        
-      </div>
-        <img
-          alt="Contact us"
-          className="max-h-full w-full rounded-lg object-cover lg:block"
-          src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGhhcHB5JTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-        />
-      </div>
+      {/* <div className="container mx-auto grid gap-x-20 gap-y-10 lg:grid-cols-2 justify-center items-center">         */}
+      <div className="container mx-auto">
+        <div className="text-center">
+          <p className="text-2xl font-bold text-gray-900 md:text-4xl">
+            Connect with Us
+          </p>
+          <p className="mt-2 text-lg text-gray-600">
+            Follow us on social media for updates and news.
+          </p>
 
+          {/*  */}
+          <div className="mt-10 grid gap-x-20 gap-y-10 lg:grid-cols-2 justify-center items-center">
+            {/* Card for Social Media Links */}
+            <div className="p-6 border rounded-lg shadow-md bg-white h-full flex flex-col justify-between">
+              <div className="space-y-4 ">
+                {socialMediaLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-full rounded-md border border-gray-300 bg-transparent px-3 py-2  lg:py-5 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Image Section */}
+            <img
+              alt="Contact us"
+              className="min-h-fit rounded-lg object-cover h-full" // Ensures the image fills the card height
+              src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fGhhcHB5JTIwcGVvcGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+            />
+          </div>
+        </div>
+      </div>
 
       {/* Address */}
       <div className="container mx-auto rounded-lg bg-gray-100 mt-20">
@@ -94,7 +100,6 @@ export default function ContactPage() {
                   Find us at these locations.
                 </p>
               </div>
-
 
               {/* address list */}
               <div className="space-y-4 divide-y-2">
