@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/pricing">Pricing</NavLink>
         </div>
-          <Link className=" bg-green-500 px-4 py-1 rounded-md hidden md:flex"  href="https://sofolitbd.web.app">Courses</Link>
+          <Link className=" bg-green-500 px-4 py-1 rounded-md hidden md:flex"  href="https://sofolit.web.app">Courses</Link>
 
         <div className="md:hidden">
           <button
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
                 Pricing
               </MobileNavLink>
             </div>
-            <Link className=" bg-green-500 px-4 py-1 rounded-md  flex justify-center md:hidden"  href="https://sofolitbd.web.app">Courses</Link>
+            <Link className=" bg-green-500 px-4 py-1 rounded-md  flex justify-center md:hidden"  href="https://sofolit.web.app">Courses</Link>
 
           </div>
         </div>
