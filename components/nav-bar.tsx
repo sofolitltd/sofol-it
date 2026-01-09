@@ -37,10 +37,10 @@ const Navbar: React.FC = () => {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/services">Services</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
+          <NavLink href="/blogs">Blogs</NavLink>
           <NavLink href="/pricing">Pricing</NavLink>
         </div>
-          <Link className=" bg-green-500 px-4 py-1 rounded-md hidden md:flex"  href="https://sofolit.web.app">Courses</Link>
+        <Link className=" bg-green-500 px-4 py-1 rounded-md hidden md:flex" href="https://sofolit.web.app">Courses</Link>
 
         <div className="md:hidden">
           <button
@@ -112,14 +112,14 @@ const Navbar: React.FC = () => {
               <MobileNavLink href="/contact" onClick={closeMobileMenu}>
                 Contact
               </MobileNavLink>
-              <MobileNavLink href="/blog" onClick={closeMobileMenu}>
-                Blog
+              <MobileNavLink href="/blogs" onClick={closeMobileMenu}>
+                Blogs
               </MobileNavLink>
               <MobileNavLink href="/pricing" onClick={closeMobileMenu}>
                 Pricing
               </MobileNavLink>
             </div>
-            <Link className=" bg-green-500 px-4 py-1 rounded-md  flex justify-center md:hidden"  href="https://sofolit.web.app">Courses</Link>
+            <Link className=" bg-green-500 px-4 py-1 rounded-md  flex justify-center md:hidden" href="https://sofolit.web.app">Courses</Link>
 
           </div>
         </div>

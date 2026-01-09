@@ -6,12 +6,12 @@ import {
   FaLinkedin,
   FaPinterest,
   FaTwitter,
-  FaGithub 
+  FaGithub
 } from "react-icons/fa";
 
 
 
-export default function  Footer() {
+export default function Footer() {
   return (
     <footer className="bg-gray-600 text-white py-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -111,7 +111,7 @@ export default function  Footer() {
         </div>
       </div>
       <div className="text-center mt-6 text-sm justify-center">
-        <p className=" text-gray-300">&copy; 2024 SOFOL IT | All Rights Reserved</p>
+        <p className=" text-gray-300">&copy; {new Date().getFullYear()} SOFOL IT | All Rights Reserved</p>
       </div>
     </footer>
   );

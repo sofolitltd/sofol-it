@@ -22,7 +22,7 @@ const PricingPage = () => {
         "User Guide & Instructions",
       ],
       priceUSD: "$100",
-      priceBDT: "৳80,000",
+      priceBDT: "৳8,000",
     },
     {
       title: "E-commerce Website",
@@ -140,33 +140,29 @@ const PricingPage = () => {
       <div className="flex sm:grid-cols-2 justify-center gap-2 pb-8">
         <button
           onClick={() => setActiveTab("all")}
-          className={`px-6 py-2 rounded-full ${
-            activeTab === "all" ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          className={`px-6 py-2 rounded-full ${activeTab === "all" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
         >
           All
         </button>
         <button
           onClick={() => setActiveTab("web")}
-          className={`px-6 py-2 rounded-full ${
-            activeTab === "web" ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          className={`px-6 py-2 rounded-full ${activeTab === "web" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
         >
           Web Development
         </button>
         <button
           onClick={() => setActiveTab("app")}
-          className={`px-6 py-2 rounded-full ${
-            activeTab === "app" ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          className={`px-6 py-2 rounded-full ${activeTab === "app" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
         >
           App Development
         </button>
         <button
           onClick={() => setActiveTab("marketing")}
-          className={`px-6 py-2 rounded-full ${
-            activeTab === "marketing" ? "bg-blue-600 text-white" : "bg-gray-200"
-          }`}
+          className={`px-6 py-2 rounded-full ${activeTab === "marketing" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
         >
           Digital Marketing
         </button>
