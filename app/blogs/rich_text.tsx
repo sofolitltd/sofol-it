@@ -51,30 +51,32 @@ export const RichText = {
   },
   marks: {
     link: ({ children, value }: any) => {
-      // Robust URL extraction: check multiple possible property names
       const href = value?.href || value?.url || value?.uri || "#";
-      const isExternal = href.startsWith("http") || /^https?:\/\//.test(href) || (!href.startsWith("/") && href !== "#");
-      const rel = isExternal ? "noreferrer noopener" : undefined;
-      const target = isExternal ? "_blank" : undefined;
-
-      if (isExternal) {
+      
+      if (href.startsWith("http")) { // Covers http and https
         return (
           <a
             href={href}
-            rel={rel}
-            target={target}
+            rel="noopener noreferrer"
+            target="_blank"
             className="text-blue-600 hover:underline font-medium"
           >
             {children}
           </a>
         );
       }
+      
+      if (href.startsWith("mailto:") || href.startsWith("tel:")) {
+        return (
+            <a href={href} className="text-blue-600 hover:underline font-medium">
+              {children}
+            </a>
+        );
+      }
 
+      // Handle internal links
       return (
-        <Link
-          href={href}
-          className="text-blue-600 hover:underline font-medium"
-        >
+        <Link href={href} className="text-blue-600 hover:underline font-medium">
           {children}
         </Link>
       );
