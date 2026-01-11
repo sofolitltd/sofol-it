@@ -7,6 +7,8 @@ import { urlFor } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { RichText } from "../rich_text";
 
+export const revalidate = 60;
+
 interface Props {
   params: Promise<{
     slug: string;
